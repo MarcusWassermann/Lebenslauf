@@ -9,7 +9,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,20 +52,19 @@ class MyApp extends StatelessWidget {
 }
 
 class CoverPage extends StatelessWidget {
-  const CoverPage({super.key});
+  const CoverPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue, // Hintergrundfarbe des Deckblatts
+      backgroundColor: Colors.lightBlue,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(
-                    context, '/home'); // Hier zur MyHomePage navigieren
+                Navigator.pushNamed(context, '/home');
               },
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.8,
@@ -78,8 +77,7 @@ class CoverPage extends StatelessWidget {
             const SizedBox(height: 24.0),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(
-                    context, '/home'); // Hier zur MyHomePage navigieren
+                Navigator.pushNamed(context, '/home');
               },
               child: const Text('Lebenslauf anzeigen'),
             ),
@@ -91,7 +89,7 @@ class CoverPage extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -105,24 +103,18 @@ class MyHomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 24.0),
-            Image.asset(
-              'assets/Mittel .png',
-              width: 100,
-              height: 100,
-              fit: BoxFit.cover,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/bild.png',
+                  width: 200, // Größere Breite für das Bild
+                  height: 450, // Größere Höhe für das Bild
+                  fit: BoxFit.cover,
+                ),
+              ],
             ),
             const SizedBox(height: 16.0),
-            const Text(
-              'Marcus Wassermann',
-              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8.0),
-            const Text(
-              'Software Developer',
-              style: TextStyle(fontSize: 18, color: Colors.grey),
-            ),
-            const SizedBox(height: 24.0),
-            const Divider(height: 1, color: Colors.grey),
             const SizedBox(height: 24.0),
             const PersonalInfo(),
             const SizedBox(height: 24.0),
@@ -155,7 +147,7 @@ class MyHomePage extends StatelessWidget {
 }
 
 class CoverLetterPage extends StatelessWidget {
-  const CoverLetterPage({super.key});
+  const CoverLetterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

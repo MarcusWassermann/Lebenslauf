@@ -7,13 +7,17 @@ class Experience extends StatelessWidget {
       company: 'App Akademie',
       location: '',
       date: 'Okt. 2023 - Jul. 2024',
-      responsibilities: [],
+      responsibilities: [
+        'Entwicklung von Anwendungen mit Dart und Flutter.',
+        'Design und Prototyping von Benutzeroberflächen mit Figma.',
+        'Umsetzung von Web-Anwendungen mit Flutter Web.',
+      ],
     ),
     Job(
       title: 'Werkzeugmacher',
       company: 'Air Craft Phillipps',
       location: 'Übersee',
-      date: 'Mai. 2013 - Sep. 2020',
+      date: 'Mai 2013 - Sep 2020',
       responsibilities: [
         'Anfertigen von Ersatzteilen nach Zeichnungen.',
         'Genaues Prüfen der Werkzeuge auf Funktionsfähigkeit.',
@@ -23,7 +27,7 @@ class Experience extends StatelessWidget {
       title: 'Vorarbeiter Stanzerei und Galwanik',
       company: 'Poda A.E',
       location: 'Thessaloniki',
-      date: 'Mai. 2002 - Aug. 2012',
+      date: 'Mai 2002 - Aug 2012',
       responsibilities: [
         'Erstellen von regelmäßigen Protokollen bezüglich ausgeführter Arbeiten und Eingeben dieser in das [Art] Softwaresystem.',
         'Fachliches Anleiten der Mitarbeiter.',
@@ -35,7 +39,7 @@ class Experience extends StatelessWidget {
       title: 'Buchbinder',
       company: 'Heinrich Koch',
       location: 'Tübingen',
-      date: 'Sep. 1985 - Mai. 2001',
+      date: 'Sep 1985 - Mai 2001',
       responsibilities: [
         'Erstellen von Kunden- und Fertigungsmustern.',
         'Herstellen von Büchern und anderer Druckerzeugnisse inkl. dem Schneiden und Falzen von Papier, das Anbringen von Buchdecken und die Verwendung von Klebstoffen oder Nähten.',
@@ -44,7 +48,7 @@ class Experience extends StatelessWidget {
     ),
   ];
 
-   Experience({super.key});
+  Experience({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +85,7 @@ class Job {
 class JobWidget extends StatelessWidget {
   final Job job;
 
-  const JobWidget(this.job, {super.key});
+  const JobWidget(this.job, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -98,11 +102,11 @@ class JobWidget extends StatelessWidget {
           children: [
             Text(
               '${job.title} | ${job.company} | ${job.location}',
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             Text(
               job.date,
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             const SizedBox(height: 6),
             ...job.responsibilities.map((resp) => Padding(

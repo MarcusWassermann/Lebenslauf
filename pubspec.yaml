@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  video_player: ^2.2.19
 
 dev_dependencies:
   flutter_test:
@@ -25,3 +26,5 @@ flutter:
     - assets/Mittel .png
     - assets/signature.png
     - assets/logo-transparent-png.png
+    - assets/durchatmen.mp4
+    - assets/bild.png
